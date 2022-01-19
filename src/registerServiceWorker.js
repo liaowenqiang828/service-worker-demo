@@ -1,6 +1,17 @@
+if (window.navigator && navigator.serviceWorker) {
+  navigator.serviceWorker.getRegistrations().then(regis => {
+    for(let reg of regis) {
+      reg.unregister()
+    }
+  })
+  console.log("unregister successful")
+}
+
 if ('serviceWorker' in navigator) {
+  console.log("${process.env.BASE_URL}", `${process.env.BASE_URL}`);
+
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js').then(registration => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
       console.log("service worker register successful", registration.scope);
     }, error => {
       console.log('service worker register failed', error)
