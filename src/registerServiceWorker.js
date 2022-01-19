@@ -11,7 +11,7 @@ if ('serviceWorker' in navigator) {
   console.log("${process.env.BASE_URL}", `${process.env.BASE_URL}`);
 
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+    navigator.serviceWorker.register('assets/service-worker.js').then(registration => {
       console.log("service worker register successful", registration.scope);
     }, error => {
       console.log('service worker register failed', error)
