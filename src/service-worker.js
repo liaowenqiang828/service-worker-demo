@@ -1,13 +1,22 @@
-self.addEventListener("message", (event) => {
-  console.log(event);
-  if (event.data && event.data.type === "SKIP_WAITING") {
-    self.skipWaiting();
-  }
-});
+const cacheName = "demoCache";
+const urlRoCache = ["/", "./main.js"];
 
-workbox.clientsClaim();
+self.addEventListener('install', event => {
+  console.log("service worker installing...")
 
-// The precaching code provided by Workbox.
-self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+  event.waitUntil(
+    caches.open(cacheName).then(cache => {
+      return cache.addAll(urlRoCache)
+    })
+  )
+})
+
+self.addEventListener('fetch', event => {
+  console.log("event.request.url", event.request.url);
+
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      return response || fetch(event.request)
+    })
+  )
+})
