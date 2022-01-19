@@ -1,12 +1,9 @@
-const cacheName = "demoCache";
-const urlRoCache = ["/", "./main.js"];
-
 self.addEventListener('install', event => {
   console.log("service worker installing...")
 
   event.waitUntil(
-    caches.open(cacheName).then(cache => {
-      return cache.addAll(urlRoCache)
+    caches.open("cacheName").then(cache => {
+      return cache.addAll()
     })
   )
 })
