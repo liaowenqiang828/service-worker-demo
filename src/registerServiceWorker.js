@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 
   window.addEventListener('load', () => {
     navigator.serviceWorker
-      .register("https://dreamy-hamilton-33d7dc.netlify.app/service-worker.js")
+      .register("/sw.js")
       .then(
         (registration) => {
           console.log("service worker register successful", registration.scope);
