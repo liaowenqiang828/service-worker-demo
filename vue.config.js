@@ -9,8 +9,6 @@ module.exports = {
     appleMobileWebAppStatusBarStyle: "black",
     workboxPluginMode: "InjectManifest",
     workboxOptions: {
-      skipWaiting: true,
-      clientsClaim: true,
       swSrc: "src/service-worker.js",
     },
   },
