@@ -7,7 +7,7 @@ module.exports = {
     msTileColor: "#000000",
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "black",
-    workboxPluginMode: "InjectMainfest",
+    workboxPluginMode: "InjectManifest",
     workboxOptions: {
       skipWaiting: true,
       clientsClaim: true,
