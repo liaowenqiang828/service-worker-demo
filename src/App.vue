@@ -36,7 +36,7 @@
       <MyButton color="secondary"/>
     </div>
     <div class="button-row">
-      <MyButton color="danger"/>
+      <MyButton color="danger" name="version one"/>
     </div>
   </div>
   </div>

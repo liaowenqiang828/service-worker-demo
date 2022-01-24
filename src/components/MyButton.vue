@@ -15,7 +15,7 @@
     `${color}` === 'secondary' ? 'secondary-btn' : '',
     `${color}` === 'danger' ? 'danger-btn' : '',
     ]"
-  >Default</button>
+  >Default {{name}}</button>
 </template>
 
 <script>
@@ -27,6 +27,7 @@ export default {
     disabled: Boolean,
     size: String,
     color: String,
+    name: String,
   },
 
   setup() {
