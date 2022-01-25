@@ -41,6 +41,9 @@
     <div class="button-row">
       <MyButton color="danger" name="version two"/>
     </div>
+    <div class="button-row">
+      <MyButton color="danger" name="version three"/>
+    </div>
   </div>
   </div>
 </template>
