@@ -11,9 +11,11 @@ self.addEventListener('install', function(event) {
 })
 
 self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        fetch(event.request).catch(function() {
+    event.respondWith( async function() {
+        try {
+            return await fetch(event.request);
+        } catch {
             return caches.match(event.request)
-        })
-    )
+        }
+    }())
 })
