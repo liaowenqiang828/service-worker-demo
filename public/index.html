@@ -14,4 +14,17 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('../src/service-worker.js')
+    .then(registration => {
+      console.log('SW registered with scope:', registration.scope);
+    })
+    .catch(err => {
+      console.error('Registration failed:', err);
+    });
+  });
+}
+  </script>
 </html>

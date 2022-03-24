@@ -31,10 +31,4 @@ if (process.env.NODE_ENV === 'production') {
       console.error("Error during service worker registration:", error);
     },
   })
-    .then((registration) => {
-      console.log("SW registered with scope:", registration.scope);
-    })
-    .catch((err) => {
-      console.error("Registration failed:", err);
-    });
 }
