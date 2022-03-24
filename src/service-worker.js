@@ -17,7 +17,24 @@ self.addEventListener("fetch", (event) => {
       try {
         console.log("event.request to network", event.request);
         console.log("result from network", await fetch(event.request));
-        return await fetch(event.request.url);
+        return await fetch(event.request);
+      } catch (err) {
+        console.log("event.request to caches", event.request);
+        console.log("result from caches", caches.match(event.request));
+        return caches.match(event.request);
+      }
+    })()
+  );
+});
+
+
+self.addEventListener("script", (event) => {
+  event.respondWith(
+    (async function () {
+      try {
+        console.log("event.request to network", event.request);
+        console.log("result from network", await fetch(event.request));
+        return await fetch(event.request);
       } catch (err) {
         console.log("event.request to caches", event.request);
         console.log("result from caches", caches.match(event.request));
