@@ -7,6 +7,7 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 
 
 self.addEventListener('install', function(event) {
+     console.log("install event");
     self.skipWaiting()
 })
 
@@ -29,8 +30,12 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     (async function () {
       try {
+        console.log("event.request to network", event.request);
+        console.log("result from network", await fetch(event.request));
         return await fetch(event.request);
       } catch (err) {
+        console.log("event.request to caches", event.request);
+        console.log("result from caches", caches.match(event.request));
         return caches.match(event.request);
       }
     })()
