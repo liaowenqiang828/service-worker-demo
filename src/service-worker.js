@@ -17,6 +17,8 @@ self.addEventListener("fetch", (event) => {
         console.log("event.request to network", event.request);
         console.log("result from network", await fetch(event.request));
         console.log("event request destination", event.request.destination);
+        console.log("event request url", event.request.url);
+        console.log(event.request.url.endsWith(".js"));
         return await fetch(event.request);
       } catch (err) {
         console.log("event.request to caches", event.request);
