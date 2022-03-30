@@ -38,7 +38,6 @@
       <div class="button-row">
         <MyButton color="danger" name="version three" />
       </div>
-      </div>
     </div>
   </div>
 </template>
