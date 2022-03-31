@@ -57,35 +57,38 @@
 
 <script>
 import MyButton from "./components/MyButton.vue";
+import { defineComponent, onMounted, ref } from "@vue/composition-api";
 
-export default {
+export default defineComponent({
   name: "app",
   components: {
     MyButton,
   },
-  data() {
+  setup() {
+    const refreshing = ref(false);
+    const worker = ref(null);
+    const updateExists = ref(false);
+    const showUpdateButton = ref(false);
+
+    const showUpdateButtonHandler = () => {
+      console.log("service-worker-updated event receive");
+      showUpdateButton.value = true;
+    };
+
+    onMounted(() => {
+      document.addEventListener("service-worker-updated", () =>
+        showUpdateButtonHandler()
+      );
+    });
+
     return {
-      refreshing: false,
-      worker: null,
-      updateExists: false,
-      showUpdateButton: false,
+      refreshing,
+      worker,
+      updateExists,
+      showUpdateButton,
     };
   },
-
-  created() {
-    console.log("document.addEventListener added");
-    document.addEventListener(
-      "service-worker-updated",
-      this.showUpdateButtonHandler()
-    );
-  },
-  methods: {
-    showUpdateButtonHandler() {
-      console.log("service-worker-updated event receive");
-      this.showUpdateButton = true;
-    },
-  },
-};
+});
 </script>
 
 <style>

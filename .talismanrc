@@ -8,8 +8,14 @@ fileignoreconfig:
 - filename: package-lock.json
   checksum: b54874715d3a7cf0f9d3de8600fd8d9d76863da011dc958df3e1cd8c61e4b2bc
 
-  - filename: src/service-worker.js
+- filename: src/service-worker.js
   checksum: 1fceff6604131a690e11872f9dd2225c2b20a1e2da64d3c2734845daeeb0047a
 
-  - filename: src/service-worker.js
+- filename: src/service-worker.js
   checksum: 1fceff6604131a690e11872f9dd2225c2b20a1e2da64d3c2734845daeeb0047a
+
+- filename: package-lock.json
+  checksum: 6a8e1fab5445d9fbad26f64d81c10d797dbf730b72074f109104d05a56fefa44
+
+- filename: package-lock.json
+  checksum: 6a8e1fab5445d9fbad26f64d81c10d797dbf730b72074f109104d05a56fefa44
