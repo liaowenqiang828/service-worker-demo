@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <div id="notification" class="hide-notice">
+      A new version of this app is available. Click
+      <button id="reload">here</button> to update.
+    </div>
     <div class="content">
       <h3>Button Components</h3>
       <div class="button-row">
@@ -99,5 +103,13 @@ export default defineComponent({
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.hide-notice {
+  visibility: hidden;
+}
+
+.show-notice {
+  visibility: visible;
 }
 </style>

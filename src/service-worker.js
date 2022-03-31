@@ -112,6 +112,13 @@ self.addEventListener("fetch", (event) => {
   );
 });
 
+self.addEventListener("message", function (event) {
+  console.log("event-------------------------------", event);
+  if (event.data.action === "skipWaiting") {
+    self.skipWaiting();
+  }
+});
+
 // self.addEventListener("script", (event) => {
 //   event.respondWith(
 //     (async function () {

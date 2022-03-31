@@ -21,9 +21,10 @@ if (process.env.NODE_ENV === "production") {
       document.dispatchEvent(new CustomEvent("service-worker-updated"));
       console.log("service-worker-updated dispatched");
     },
-    updated() {
-      console.log(
-        "New content is available; please refresh.***********************"
+    updated(registration) {
+      console.log("New content is available; please refresh.");
+      document.dispatchEvent(
+        new CustomEvent("serviceWorkerUpdateEvent", { detail: registration })
       );
     },
     offline() {
