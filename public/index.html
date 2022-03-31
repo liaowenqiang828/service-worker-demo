@@ -21,7 +21,7 @@
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         navigator.serviceWorker
-          .register("../src/service-worker.js")
+          .register("service-worker.js")
           .then((registration) => {
             console.log("SW registered with scope:", registration.scope);
           })
@@ -42,7 +42,7 @@
       ) {
         // register service worker file
         navigator.serviceWorker
-          .register("../src/service-worker.js")
+          .register("service-worker.js")
           .then((reg) => {
             reg.onupdatefound = () => {
               const installingWorker = reg.installing;
