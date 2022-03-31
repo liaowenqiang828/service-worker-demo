@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 
-import { register } from 'register-service-worker'
+import { register } from "register-service-worker";
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   register(`${process.env.BASE_URL}service-worker.js`, {
     ready() {
       console.log(
@@ -17,10 +17,12 @@ if (process.env.NODE_ENV === 'production') {
       console.log("Content has been cached for offline use.");
     },
     updatefound() {
-      console.log("New content is downloading.");
+      console.log("New content is downloading.-----------------------------");
     },
     updated() {
-      console.log("New content is available; please refresh.");
+      console.log(
+        "New content is available; please refresh.***********************"
+      );
     },
     offline() {
       console.log(
@@ -30,5 +32,5 @@ if (process.env.NODE_ENV === 'production') {
     error(error) {
       console.error("Error during service worker registration:", error);
     },
-  })
+  });
 }

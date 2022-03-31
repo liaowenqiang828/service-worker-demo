@@ -38,6 +38,12 @@
       <div class="button-row">
         <MyButton color="danger" name="version three" />
       </div>
+      <div class="button-row">
+        <MyButton color="danger" name="version three" />
+      </div>
+      <div class="button-row">
+        <MyButton color="danger" name="version three" />
+      </div>
     </div>
   </div>
 </template>
