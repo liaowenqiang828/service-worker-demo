@@ -7,10 +7,10 @@ module.exports = {
     msTileColor: "#000000",
     appleMobileWebAppCapable: "yes",
     appleMobileWebAppStatusBarStyle: "black",
-    workboxPluginMode: "GenerateSW",
-    // workboxOptions: {
-    //   swSrc: "./service-worker.js",
-    // },
+    workboxPluginMode: "InjectManifest",
+    workboxOptions: {
+      swSrc: "./service-worker.js",
+    },
   },
 
   // // Other webpack config...
