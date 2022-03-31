@@ -49,11 +49,7 @@
         <MyButton color="danger" name="version three" />
       </div>
       <div class="button-row">
-        <MyButton
-          v-if="showUpdatedButton"
-          color="danger"
-          name="----updated----"
-        />
+        <MyButton color="danger" name="----updated----" />
       </div>
     </div>
   </div>
