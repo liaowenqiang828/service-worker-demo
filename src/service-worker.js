@@ -71,7 +71,7 @@
 
 workbox.core.setCacheNameDetails({
   prefix: "service-worker-demo-pwa",
-  suffix: "v1.0.0",
+  suffix: "v1.0.1",
 });
 
 // workbox.routing.registerRoute(
@@ -84,10 +84,10 @@ workbox.core.setCacheNameDetails({
 
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [], {});
 
-self.addEventListener("install", function (event) {
-  console.log("install event");
-  self.skipWaiting();
-});
+// self.addEventListener("install", function (event) {
+//   console.log("install event");
+//   self.skipWaiting();
+// });
 
 self.addEventListener("fetch", (event) => {
   // if (event.request.url.endsWith("css")) {
