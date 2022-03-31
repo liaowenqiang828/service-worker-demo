@@ -3,6 +3,14 @@ workbox.core.setCacheNameDetails({
   suffix: "v1.0.0",
 });
 
+workbox.routing.registerRoute(
+  new workbox.routing.NavigationRoute(
+    new workbox.strategies.NetworkFirst({
+      cacheName: "service-worker-demo-pwa",
+    })
+  )
+);
+
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [], {});
 
 self.addEventListener("install", function (event) {
