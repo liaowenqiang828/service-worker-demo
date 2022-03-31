@@ -18,13 +18,13 @@ if (process.env.NODE_ENV === "production") {
     },
     updatefound() {
       console.log("New content is downloading.-----------------------------");
+      document.dispatchEvent(new CustomEvent("service-worker-updated"));
+      console.log("service-worker-updated dispatched");
     },
     updated() {
       console.log(
         "New content is available; please refresh.***********************"
       );
-      document.dispatchEvent(new CustomEvent("service-worker-updated"));
-      console.log("service-worker-updated dispatched");
     },
     offline() {
       console.log(
