@@ -44,6 +44,13 @@
       <div class="button-row">
         <MyButton color="danger" name="version three" />
       </div>
+      <div class="button-row">
+        <MyButton
+          v-if="showUpdatedButton"
+          color="danger"
+          name="----updated----"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -61,11 +68,23 @@ export default {
       refreshing: false,
       worker: null,
       updateExists: false,
+      showUpdateButton: false,
     };
   },
 
-  created() {},
-  methods: {},
+  created() {
+    console.log("document.addEventListener added");
+    document.addEventListener(
+      "service-worker-updated",
+      this.showUpdateButtonHandler()
+    );
+  },
+  methods: {
+    showUpdateButtonHandler() {
+      console.log("service-worker-updated event receive");
+      this.showUpdateButton = true;
+    },
+  },
 };
 </script>
 
