@@ -89,7 +89,7 @@
     navigator.serviceWorker &&
       navigator.serviceWorker.addEventListener("controllerchange", function () {
         if (refreshing) return;
-        window.location.href = window.location.href;
+        window.location.reload();
         refreshing = true;
       });
   </script>
