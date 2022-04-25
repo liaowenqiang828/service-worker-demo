@@ -1,6 +1,6 @@
 workbox.core.setCacheNameDetails({
   prefix: "service-worker-demo-pwa",
-  suffix: "v1.0.1",
+  suffix: "v1.0.2",
 });
 
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [], {});
