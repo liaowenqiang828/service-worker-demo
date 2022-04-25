@@ -46,6 +46,13 @@
       navigator.serviceWorker.register("/service-worker.js").then((reg) => {
         console.log("reg", reg);
 
+        reg.addEventListener("new_version_check", () => {
+          console.log("new_version_check received");
+          navigator.serviceWorker.register("/service-worker.js").then((reg) => {
+            console.log("reg after router done ", reg);
+          });
+        });
+
         reg.addEventListener("updatefound", () => {
           // An updated service worker has appeared in reg.installing!
           newWorker = reg.installing;

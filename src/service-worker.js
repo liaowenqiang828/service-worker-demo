@@ -18,15 +18,15 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     (async function () {
       try {
-        console.log("event.request to network", event.request);
-        console.log("result from network", await fetch(event.request));
-        console.log("event request destination", event.request.destination);
-        console.log("event request url", event.request.url);
-        console.log(event.request.url.endsWith(".js"));
+        // console.log("event.request to network", event.request);
+        // console.log("result from network", await fetch(event.request));
+        // console.log("event request destination", event.request.destination);
+        // console.log("event request url", event.request.url);
+        // console.log(event.request.url.endsWith(".js"));
         return await fetch(event.request);
       } catch (err) {
-        console.log("event.request to caches", event.request);
-        console.log("result from caches", caches.match(event.request));
+        // console.log("event.request to caches", event.request);
+        // console.log("result from caches", caches.match(event.request));
         return caches.match(event.request);
       }
     })()
@@ -34,7 +34,7 @@ self.addEventListener("fetch", (event) => {
 });
 
 self.addEventListener("message", function (event) {
-  console.log("event-------------------------------", event);
+  console.log("event skipWaiting", event);
   if (event.data.action === "skipWaiting") {
     self.skipWaiting();
   }

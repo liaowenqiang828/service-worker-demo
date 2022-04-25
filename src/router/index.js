@@ -21,4 +21,9 @@ const routes = [
 
 const router = new VueRouter({ routes });
 
+router.beforeEach(() => {
+  document.dispatchEvent(new CustomEvent("load"));
+  document.dispatchEvent(new CustomEvent("new_version_check"));
+});
+
 export default router;
