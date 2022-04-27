@@ -33,7 +33,7 @@ export default {
         e,
         e.data
       );
-      window.location.reload();
+      // window.location.reload();
     });
   },
 };
