@@ -21,7 +21,7 @@ export default {
   created() {
     this.$root.$on("event_install", () => console.log("event install receive"));
     this.$root.$on("event_activate", () =>
-      console.log("event avtivate receive by on ")
+      console.log("event avtivate receive by on window-------")
     );
 
     const serviceWorkerMessgeChannel = new BroadcastChannel(
