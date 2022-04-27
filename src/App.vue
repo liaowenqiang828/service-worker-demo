@@ -27,7 +27,7 @@ export default {
     const serviceWorkerMessgeChannel = new BroadcastChannel(
       "serviceWorkerMessge"
     );
-    serviceWorkerMessgeChannel.onmessage((e) => {
+    serviceWorkerMessgeChannel.addEventListener("message", (e) => {
       console.log("event receive", e, e.data);
     });
   },
