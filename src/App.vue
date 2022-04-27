@@ -21,15 +21,15 @@ export default {
   created() {
     this.$root.$on("event_install", () => console.log("event install receive"));
     this.$root.$on("event_activate", () =>
-      console.log("event avtivate receive")
+      console.log("event avtivate receive by on ")
     );
 
     const serviceWorkerMessgeChannel = new BroadcastChannel(
       "serviceWorkerMessge"
     );
-    serviceWorkerMessgeChannel.addEventListener("message", (e) => {
+    serviceWorkerMessgeChannel.addEventListener("event_activate", (e) => {
       console.log(
-        "event receive**************************************",
+        "event receive by channel**************************************",
         e,
         e.data
       );
