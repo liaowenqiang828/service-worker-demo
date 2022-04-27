@@ -23,6 +23,13 @@ export default {
     this.$root.$on("event_activate", () =>
       console.log("event avtivate receive")
     );
+
+    const serviceWorkerMessgeChannel = new BroadcastChannel(
+      "serviceWorkerMessge"
+    );
+    serviceWorkerMessgeChannel.onmessage((e) => {
+      console.log("event receive", e, e.data);
+    });
   },
 };
 </script>
