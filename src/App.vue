@@ -17,6 +17,13 @@
 <script>
 export default {
   name: "app",
+
+  created() {
+    this.$root.$on("event_install", () => console.log("event install receive"));
+    this.$root.$on("event_activate", () =>
+      console.log("event avtivate receive")
+    );
+  },
 };
 </script>
 

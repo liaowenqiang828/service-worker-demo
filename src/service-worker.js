@@ -35,4 +35,12 @@ self.addEventListener("fetch", (event) => {
 
 self.addEventListener("install", function (event) {
   self.skipWaiting();
+
+  const client = await clients.get(event.clientId);
+  client.postMessage("event_install");
+});
+
+self.addEventListener("activate", function (event) {
+  const client = await clients.get(event.clientId);
+  client.postMessage("event_activate");
 });
