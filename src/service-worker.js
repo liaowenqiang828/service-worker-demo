@@ -36,10 +36,3 @@ self.addEventListener("fetch", (event) => {
 self.addEventListener("install", function (event) {
   self.skipWaiting();
 });
-
-navigator.serviceWorker.addEventListener("controllerchange", () => {
-  console.log("event emit");
-  window.document.dispatchEvent(
-    new CustomEvent("new service worker is ready for use")
-  );
-});

@@ -7,6 +7,13 @@ if (process.env.NODE_ENV === "production") {
     console.log("A service worker is active:", registration.active);
   });
 
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    console.log("event emit");
+    window.document.dispatchEvent(
+      new CustomEvent("new service worker is ready for use")
+    );
+  });
+
   register(`${process.env.BASE_URL}service-worker.js`, {
     registered() {
       console.log("Service worker has been registered.");
