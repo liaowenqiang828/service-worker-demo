@@ -3,6 +3,10 @@
 import { register } from "register-service-worker";
 
 if (process.env.NODE_ENV === "production") {
+  navigator.serviceWorker.ready.then(function (registration) {
+    console.log("A service worker is active:", registration.active);
+  });
+
   register(`${process.env.BASE_URL}service-worker.js`, {
     registered() {
       console.log("Service worker has been registered.");

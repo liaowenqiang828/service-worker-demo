@@ -33,9 +33,13 @@ self.addEventListener("fetch", (event) => {
   );
 });
 
-self.addEventListener("message", function (event) {
-  console.log("event skipWaiting", event);
-  if (event.data.action === "skipWaiting") {
-    self.skipWaiting();
-  }
+self.addEventListener("install", function (event) {
+  self.skipWaiting();
+});
+
+navigator.serviceWorker.addEventListener("controllerchange", () => {
+  console.log("event emit");
+  window.document.dispatchEvent(
+    new CustomEvent("new service worker is ready for use")
+  );
 });

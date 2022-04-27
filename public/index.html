@@ -41,9 +41,10 @@
           headers: { "Service-Worker": "script" },
         }
       ).then((response) => {
-        navigator.serviceWorker.register("/service-worker.js").then((reg) => {
-          console.log("reg after router done ", reg);
-        });
+        navigator.serviceWorker.update();
+        // navigator.serviceWorker.register("/service-worker.js").then((reg) => {
+        //   console.log("reg after router done ", reg);
+        // });
       });
     });
 
