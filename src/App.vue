@@ -28,7 +28,11 @@ export default {
       "serviceWorkerMessge"
     );
     serviceWorkerMessgeChannel.addEventListener("message", (e) => {
-      console.log("event receive", e, e.data);
+      console.log(
+        "event receive**************************************",
+        e,
+        e.data
+      );
     });
   },
 };

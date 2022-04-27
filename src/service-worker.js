@@ -41,9 +41,6 @@ self.addEventListener("activate", function (event) {
   const serviceWorkerMessgeChannel = new BroadcastChannel(
     "serviceWorkerMessge"
   );
+  console.log("postMessage event_activate_____________________");
   serviceWorkerMessgeChannel.postMessage("event_activate");
 });
-// self.addEventListener("activate", function (event) {
-//   const client = await clients.get(event.clientId);
-//   client.postMessage("event_activate");
-// });
