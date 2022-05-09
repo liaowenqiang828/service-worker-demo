@@ -1,7 +1,8 @@
 [[headers]]
-  for = "/"
+  for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
+    X-XSS-Protection = "1; mode=block"
 
     #  Multi-value headers are expressed with multi-line strings
 	cache-control = '''
@@ -9,4 +10,5 @@
 	no-cache,
 	no-store,
 	must-revalidate'''
+
 
