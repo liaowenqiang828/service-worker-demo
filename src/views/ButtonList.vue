@@ -4,7 +4,7 @@
     <div class="button-row">
       <MyButton />
     </div>
-    <div class="button-row">
+    <!-- <div class="button-row">
       <MyButton variant="outline" />
       <MyButton variant="outline" />
     </div>
@@ -23,8 +23,8 @@
       <MyButton size="sm" />
       <MyButton size="md" />
       <MyButton size="lg" />
-    </div>
-    <div class="button-row">
+    </div> -->
+    <!-- <div class="button-row">
       <MyButton color="default" />
     </div>
     <div class="button-row">
@@ -44,7 +44,7 @@
     </div>
     <div class="button-row">
       <MyButton color="danger" name="----updated----" />
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -57,6 +57,19 @@ export default {
   },
   props: {},
   methods: {},
+  beforeCreate() {
+    console.log("before create callback in parent");
+  },
+  created() {
+    console.log("created callback in parent");
+  },
+
+  beforeMount() {
+    console.log("before mounted callback in parent");
+  },
+  mounted() {
+    console.log("mounted callback in parent");
+  },
 };
 </script>
 

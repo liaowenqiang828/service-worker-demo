@@ -35,6 +35,19 @@ export default {
   setup() {
     return {};
   },
+  beforeCreate() {
+    console.log("before create callback in child");
+  },
+  created() {
+    console.log("created callback in child");
+  },
+
+  beforeMount() {
+    console.log("before mounted callback in child");
+  },
+  mounted() {
+    console.log("mounted callback in child");
+  },
 };
 </script>
 
